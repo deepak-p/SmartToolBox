@@ -11,6 +11,7 @@ import Entities.Users;
 import com.maven.smarttoolbox.dbinteraction.AddTools;
 import com.maven.smarttoolbox.dbinteraction.AddUser;
 import com.maven.smarttoolbox.dbinteraction.GetToolsReport;
+import com.maven.smarttoolbox.dbinteraction.LoginVerification;
 import java.sql.Date;
 import java.util.List;
 
@@ -35,10 +36,8 @@ public class RDBImpl implements DbImpl {
     @Override
     public boolean addTools(Tools t) {
        
-        DBcmd addTools = new AddTools(t);
-         
+        DBcmd addTools = new AddTools(t); 
         addTools.execute();
-        
         return (Boolean) addTools.getResult();
 
     }
@@ -73,6 +72,13 @@ public class RDBImpl implements DbImpl {
         DBcmd getToolsReport=new GetToolsReport(startDate,endDate);
         getToolsReport.execute();
         return (List<ToolsReport>) getToolsReport.getResult();
+    }
+
+    @Override
+    public String loginVerification(String email,String password) {
+       DBcmd loginVerify= new LoginVerification(email,password);
+       loginVerify.execute();
+       return (String) loginVerify.getResult();
     }
 
 }

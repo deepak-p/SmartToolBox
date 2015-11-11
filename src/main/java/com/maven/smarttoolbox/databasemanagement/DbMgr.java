@@ -8,6 +8,7 @@ package com.maven.smarttoolbox.databasemanagement;
 import Entities.Tools;
 import Entities.ToolsReport;
 import Entities.Users;
+import com.maven.smarttoolbox.dbinteraction.LoginVerification;
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -21,6 +22,10 @@ public class DbMgr {
 
     DbImpl dbimpl = new RDBImpl();
 
+    public String loginVerification(String email,String password){
+        return dbimpl.loginVerification(email,password);
+        
+    }
     public boolean addUser(Users s) {
         return dbimpl.addUser(s);
 

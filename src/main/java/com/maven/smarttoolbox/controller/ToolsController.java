@@ -11,7 +11,6 @@ package com.maven.smarttoolbox.controller;
  */
 import Entities.Tools;
 import Entities.ToolsReport;
-import Entities.Users;
 import com.maven.smarttoolbox.databasemanagement.DbMgr;
 import java.io.IOException;
 import java.sql.Date;
@@ -44,7 +43,7 @@ public class ToolsController extends HttpServlet {
 
         //Add admin to database
         message = id + toolName + location + type;
-       DbMgr db = new DbMgr();
+        DbMgr db = new DbMgr();
         Boolean isAdded = db.addTools(tool);
 
         if (isAdded) {
@@ -65,7 +64,6 @@ public class ToolsController extends HttpServlet {
         // forward to mypage.html
 
         DbMgr db = new DbMgr();
-
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
         java.util.Date start_date;
         try {

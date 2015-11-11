@@ -8,6 +8,7 @@ package com.maven.smarttoolbox.databasemanagement;
 import Entities.Tools;
 import Entities.ToolsReport;
 import Entities.Users;
+import com.maven.smarttoolbox.dbinteraction.LoginVerification;
 import java.sql.Date;
 import java.util.List;
 
@@ -33,6 +34,8 @@ public interface DbImpl {
     public void reportLostItem(int toolId);
 
     public boolean updateTools(Tools t);
+
+    public String loginVerification(String email, String password);
 
 
 }

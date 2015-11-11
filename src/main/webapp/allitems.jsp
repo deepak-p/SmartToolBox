@@ -115,15 +115,7 @@
                     </div>
                 </div>
             </div>
-
-
-
-
             <c:forEach items="${toolsreport}" var="elements">
-
-                
-
-
                 <div id="w-columnbox-aabc" data-type="columnbox" class="n-widget w-columnbox">
                     <div class="w-col" style="width:16.666666666667%;">
                         <div id="w-area-aabd" data-type="area" class="p-164042 n-widget w-area">
@@ -175,14 +167,7 @@
 
             </c:forEach>
 
-
-
-
-
         </div>
-
-
-
         <!--custom footer start-->
         <script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
         document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fce299e0fd4094e4d5efce40bab839811' type='text/javascript'%3E%3C/script%3E"));</script>

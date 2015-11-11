@@ -13,6 +13,18 @@
         <!--[if IE 6]>
         <script> try { document.execCommand('BackgroundImageCache', false, true); } catch(e) {} </script>
         <![endif]-->
+        
+        
+         <%
+                 //check the user id is not null if the user id is null then promt for login
+                     
+                     if(session.getAttribute("email")==null){
+                         getServletContext().getRequestDispatcher("/index.jsp").forward(request, response);
+                     }
+                 
+                 
+                 
+                 %>
     </head>
 
 
