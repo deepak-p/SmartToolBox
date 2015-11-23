@@ -36,6 +36,8 @@ public interface DbImpl {
     public boolean updateTools(Tools t);
 
     public String loginVerification(String email, String password);
+    
+    public List<Users> getStudents();
 
 
 }

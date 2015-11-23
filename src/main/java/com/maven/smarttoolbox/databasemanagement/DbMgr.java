@@ -58,6 +58,12 @@ public class DbMgr {
         return dbimpl.getToolsReport(startDate, endDate,status);
 
     }
+    
+    public List<Users> getStudents() {
+        return dbimpl.getStudents();
+
+    }
+    
 
     public void reportLostItem(int toolId) {
 

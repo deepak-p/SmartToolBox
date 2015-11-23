@@ -10,6 +10,7 @@ import Entities.ToolsReport;
 import Entities.Users;
 import com.maven.smarttoolbox.dbinteraction.AddTools;
 import com.maven.smarttoolbox.dbinteraction.AddUser;
+import com.maven.smarttoolbox.dbinteraction.GetStudents;
 import com.maven.smarttoolbox.dbinteraction.GetToolsReport;
 import com.maven.smarttoolbox.dbinteraction.LoginVerification;
 import java.sql.Date;
@@ -79,6 +80,14 @@ public class RDBImpl implements DbImpl {
        DBcmd loginVerify= new LoginVerification(email,password);
        loginVerify.execute();
        return (String) loginVerify.getResult();
+    }
+
+    @Override
+    public List<Users> getStudents() {
+         DBcmd getStudents=new GetStudents();
+        getStudents.execute();
+        return (List<Users>) getStudents.getResult();
+        
     }
 
 }
