@@ -70,7 +70,7 @@
             </div>
             <div id="w-area-aaaq" data-type="area" class="p-164042 n-widget w-area">
                 <div id="w-button-aaar" data-type="button" class="n-widget w-button t-button-am08 t-button-am08-black">
-                    <a href="alluser.jsp" class="w-button-container w-button-fixed" id="w-button-aaar-b">
+                    <a href="/SmartToolBox/getstudentrecords" class="w-button-container w-button-fixed" id="w-button-aaar-b">
                         <span class="w-button-text"><i class="middle"></i><b class="text">Go</b></span><i class="w-button-right"></i>
                     </a>
                 </div>

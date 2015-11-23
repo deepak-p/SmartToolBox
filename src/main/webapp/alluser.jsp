@@ -1,4 +1,9 @@
+
+<%@page import="java.util.List"%>
+<%@page import="Entities.Users"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!doctype html>
+
 <html>
     <head>
         <meta charset="utf-8" />
@@ -62,6 +67,8 @@
         <div id="w-text-aaam" data-type="text" class="n-widget w-text">
             <font><font>Search results</font></font>
         </div>
+
+
         <div id="w-area-aaan" data-type="area" class="p-164042 n-widget w-area">
             <div id="w-area-aaao" data-type="area" class="p-164042 n-widget w-area">
                 <div id="w-columnbox-aaap" data-type="columnbox" class="n-widget w-columnbox">
@@ -93,201 +100,47 @@
                             </div>
                         </div>
                     </div>
+
+                </div>
+            </div>
+
+            <c:forEach items="${students}" var="element"> 
+                <div id="w-columnbox-aaba" data-type="columnbox" class="n-widget w-columnbox">
                     <div class="w-col" style="width:20%;">
-                        <div id="w-area-aaay" data-type="area" class="p-164042 n-widget w-area">
-                            <div id="w-text-aaaz" data-type="text" class="n-widget w-text">
-                                <font><font>Item check out times</font></font>
+                        <div id="w-area-aabb" data-type="area" class="p-164042 n-widget w-area">
+                            <div id="w-image-aabc" data-type="image" class="n-widget w-image">
+                                <img src="assets/c327595b5156ff6616f3fb621e4b690a.jpg" />
                             </div>
                         </div>
                     </div>
+                    <div class="w-col" style="width:20%;">
+                        <div id="w-area-aabd" data-type="area" class="p-164042 n-widget w-area">
+                            <div id="w-text-aabe" data-type="text" class="n-widget w-text">
+                                <c:out value="${element.getLName()}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-col" style="width:20%;">
+                        <div id="w-area-aabf" data-type="area" class="p-164042 n-widget w-area">
+                            <div id="w-text-aabg" data-type="text" class="n-widget w-text">
+                                 <c:out value="${element.getFName()}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-col" style="width:20%;">
+                        <div id="w-area-aabh" data-type="area" class="p-164042 n-widget w-area">
+                            <div id="w-text-aabi" data-type="text" class="n-widget w-text">
+                                <font><font> <c:out value="${element.getId()}" /> </font></font>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
+                
+            </c:forEach>
+
             </div>
-            <div id="w-columnbox-aaba" data-type="columnbox" class="n-widget w-columnbox">
-                <div class="w-col" style="width:20%;">
-                    <div id="w-area-aabb" data-type="area" class="p-164042 n-widget w-area">
-                        <div id="w-image-aabc" data-type="image" class="n-widget w-image">
-                            <img src="assets/c327595b5156ff6616f3fb621e4b690a.jpg" />
-                        </div>
-                    </div>
-                </div>
-                <div class="w-col" style="width:20%;">
-                    <div id="w-area-aabd" data-type="area" class="p-164042 n-widget w-area">
-                        <div id="w-text-aabe" data-type="text" class="n-widget w-text">
-                            LIU
-                        </div>
-                    </div>
-                </div>
-                <div class="w-col" style="width:20%;">
-                    <div id="w-area-aabf" data-type="area" class="p-164042 n-widget w-area">
-                        <div id="w-text-aabg" data-type="text" class="n-widget w-text">
-                            XIN
-                        </div>
-                    </div>
-                </div>
-                <div class="w-col" style="width:20%;">
-                    <div id="w-area-aabh" data-type="area" class="p-164042 n-widget w-area">
-                        <div id="w-text-aabi" data-type="text" class="n-widget w-text">
-                            <font><font>1000000000</font></font>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-col" style="width:20%;">
-                    <div id="w-area-aabj" data-type="area" class="p-164042 n-widget w-area">
-                        <div id="w-text-aabk" data-type="text" class="n-widget w-text">
-                            <font><font class=""><font><font>5</font></font></font></font>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="w-columnbox-aabl" data-type="columnbox" class="n-widget w-columnbox">
-                <div class="w-col" style="width:20%;">
-                    <div id="w-area-aabm" data-type="area" class="p-164042 n-widget w-area">
-                        <div id="w-image-aabn" data-type="image" class="n-widget w-image">
-                            <img src="assets/c327595b5156ff6616f3fb621e4b690a.jpg" />
-                        </div>
-                    </div>
-                </div>
-                <div class="w-col" style="width:20%;">
-                    <div id="w-area-aabo" data-type="area" class="p-164042 n-widget w-area">
-                        <div id="w-text-aabp" data-type="text" class="n-widget w-text">
-                            LIU
-                        </div>
-                    </div>
-                </div>
-                <div class="w-col" style="width:20%;">
-                    <div id="w-area-aabq" data-type="area" class="p-164042 n-widget w-area">
-                        <div id="w-text-aabr" data-type="text" class="n-widget w-text">
-                            XIN
-                        </div>
-                    </div>
-                </div>
-                <div class="w-col" style="width:20%;">
-                    <div id="w-area-aabs" data-type="area" class="p-164042 n-widget w-area">
-                        <div id="w-text-aabt" data-type="text" class="n-widget w-text">
-                            <font><font>1000000000</font></font>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-col" style="width:20%;">
-                    <div id="w-area-aabu" data-type="area" class="p-164042 n-widget w-area">
-                        <div id="w-text-aabv" data-type="text" class="n-widget w-text">
-                            <font><font class=""><font><font>5</font></font></font></font>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="w-columnbox-aabw" data-type="columnbox" class="n-widget w-columnbox">
-                <div class="w-col" style="width:20%;">
-                    <div id="w-area-aabx" data-type="area" class="p-164042 n-widget w-area">
-                        <div id="w-image-aaby" data-type="image" class="n-widget w-image">
-                            <img src="assets/c327595b5156ff6616f3fb621e4b690a.jpg" />
-                        </div>
-                    </div>
-                </div>
-                <div class="w-col" style="width:20%;">
-                    <div id="w-area-aabz" data-type="area" class="p-164042 n-widget w-area">
-                        <div id="w-text-aaca" data-type="text" class="n-widget w-text">
-                            LIU
-                        </div>
-                    </div>
-                </div>
-                <div class="w-col" style="width:20%;">
-                    <div id="w-area-aacb" data-type="area" class="p-164042 n-widget w-area">
-                        <div id="w-text-aacc" data-type="text" class="n-widget w-text">
-                            XIN
-                        </div>
-                    </div>
-                </div>
-                <div class="w-col" style="width:20%;">
-                    <div id="w-area-aacd" data-type="area" class="p-164042 n-widget w-area">
-                        <div id="w-text-aace" data-type="text" class="n-widget w-text">
-                            <font><font>1000000000</font></font>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-col" style="width:20%;">
-                    <div id="w-area-aacf" data-type="area" class="p-164042 n-widget w-area">
-                        <div id="w-text-aacg" data-type="text" class="n-widget w-text">
-                            <font><font class=""><font><font>5</font></font></font></font>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="w-columnbox-aach" data-type="columnbox" class="n-widget w-columnbox">
-                <div class="w-col" style="width:20%;">
-                    <div id="w-area-aaci" data-type="area" class="p-164042 n-widget w-area">
-                        <div id="w-image-aacj" data-type="image" class="n-widget w-image">
-                            <img src="assets/c327595b5156ff6616f3fb621e4b690a.jpg" />
-                        </div>
-                    </div>
-                </div>
-                <div class="w-col" style="width:20%;">
-                    <div id="w-area-aack" data-type="area" class="p-164042 n-widget w-area">
-                        <div id="w-text-aacl" data-type="text" class="n-widget w-text">
-                            LIU
-                        </div>
-                    </div>
-                </div>
-                <div class="w-col" style="width:20%;">
-                    <div id="w-area-aacm" data-type="area" class="p-164042 n-widget w-area">
-                        <div id="w-text-aacn" data-type="text" class="n-widget w-text">
-                            XIN
-                        </div>
-                    </div>
-                </div>
-                <div class="w-col" style="width:20%;">
-                    <div id="w-area-aaco" data-type="area" class="p-164042 n-widget w-area">
-                        <div id="w-text-aacp" data-type="text" class="n-widget w-text">
-                            <font><font>1000000000</font></font>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-col" style="width:20%;">
-                    <div id="w-area-aacq" data-type="area" class="p-164042 n-widget w-area">
-                        <div id="w-text-aacr" data-type="text" class="n-widget w-text">
-                            <font><font class=""><font><font>5</font></font></font></font>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="w-columnbox-aacs" data-type="columnbox" class="n-widget w-columnbox">
-                <div class="w-col" style="width:20%;">
-                    <div id="w-area-aact" data-type="area" class="p-164042 n-widget w-area">
-                        <div id="w-image-aacu" data-type="image" class="n-widget w-image">
-                            <img src="assets/c327595b5156ff6616f3fb621e4b690a.jpg" />
-                        </div>
-                    </div>
-                </div>
-                <div class="w-col" style="width:20%;">
-                    <div id="w-area-aacv" data-type="area" class="p-164042 n-widget w-area">
-                        <div id="w-text-aacw" data-type="text" class="n-widget w-text">
-                            LIU
-                        </div>
-                    </div>
-                </div>
-                <div class="w-col" style="width:20%;">
-                    <div id="w-area-aacx" data-type="area" class="p-164042 n-widget w-area">
-                        <div id="w-text-aacy" data-type="text" class="n-widget w-text">
-                            XIN
-                        </div>
-                    </div>
-                </div>
-                <div class="w-col" style="width:20%;">
-                    <div id="w-area-aacz" data-type="area" class="p-164042 n-widget w-area">
-                        <div id="w-text-aada" data-type="text" class="n-widget w-text">
-                            <font><font>1000000000</font></font>
-                        </div>
-                    </div>
-                </div>
-                <div class="w-col" style="width:20%;">
-                    <div id="w-area-aadb" data-type="area" class="p-164042 n-widget w-area">
-                        <div id="w-text-aadc" data-type="text" class="n-widget w-text">
-                            <font><font class=""><font><font>5</font></font></font></font>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <!--custom footer start-->
         <script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
             document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fce299e0fd4094e4d5efce40bab839811' type='text/javascript'%3E%3C/script%3E"));</script>

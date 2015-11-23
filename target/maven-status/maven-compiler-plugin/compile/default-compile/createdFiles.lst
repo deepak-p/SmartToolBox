@@ -6,7 +6,6 @@ com/maven/smarttoolbox/databasemanagement/DbImpl.class
 com/maven/smarttoolbox/dbinteraction/AddUser.class
 com/maven/smarttoolbox/databasemanagement/RDBImpl.class
 com/maven/smarttoolbox/databasemanagement/DbMgr.class
-com/maven/smarttoolbox/controller/StudentsController.class
 Entities/Users_.class
 com/maven/smarttoolbox/dbinteraction/GetToolsReport.class
 Entities/ToolsReport.class
