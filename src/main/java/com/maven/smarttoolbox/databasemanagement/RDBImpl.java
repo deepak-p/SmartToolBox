@@ -68,8 +68,8 @@ public class RDBImpl implements DbImpl {
     }
 
     @Override
-    public List<ToolsReport> getToolsReport(Date startDate,Date endDate) {
-        DBcmd getToolsReport=new GetToolsReport(startDate,endDate);
+    public List<ToolsReport> getToolsReport(Date startDate,Date endDate,String status) {
+        DBcmd getToolsReport=new GetToolsReport(startDate,endDate,status);
         getToolsReport.execute();
         return (List<ToolsReport>) getToolsReport.getResult();
     }

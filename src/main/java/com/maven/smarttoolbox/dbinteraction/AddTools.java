@@ -7,6 +7,7 @@ package com.maven.smarttoolbox.dbinteraction;
 
 import Entities.Tools;
 import com.maven.smarttoolbox.databasemanagement.DBcmd;
+import com.maven.smarttoolbox.databasemanagement.DbMgr;
 import java.sql.SQLException;
 
 /**
@@ -16,7 +17,7 @@ import java.sql.SQLException;
 public class AddTools extends DBcmd {
 
     private Tools tool;
-    String sqlQuery = "INSERT INTO Tools (id, toolName,drawer, type) VALUES (?, ?, ?, ?)";
+    String sqlQuery = "INSERT INTO Tools (id, toolName,drawer, type,status) VALUES (?, ?, ?, ?,?)";
 
     public AddTools(Tools tool) {
         super();
@@ -31,6 +32,7 @@ public class AddTools extends DBcmd {
             statement.setString(2, tool.getToolName());
             statement.setInt(3, tool.getDrawer());
             statement.setString(4, tool.getType());
+            statement.setString(5, "available");
 
             statement.executeUpdate();
             processResult();
@@ -45,6 +47,24 @@ public class AddTools extends DBcmd {
     @Override
     public void processResult() {
         result = true;
+    }
+    
+    public static void main(String[] args){
+        
+       
+      
+         DbMgr db = new DbMgr();
+         Tools tools= new Tools();
+         tools.setId(Long.parseLong("123098"));
+         tools.setDrawer(4);
+         tools.setToolName("Screw-medium-size");
+         tools.setType("Screwdriver");
+
+       boolean message=db.addTools(tools);
+       
+       
+        
+        
     }
 
 }

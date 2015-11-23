@@ -23,7 +23,7 @@ public interface DbImpl {
     public boolean removeUser(int id);
 
     public boolean addTools(Tools t);
-    public List<ToolsReport> getToolsReport(Date startDate, Date endDate);
+    public List<ToolsReport> getToolsReport(Date startDate, Date endDate,String status);
 
     public boolean removeTools(int toolId);
 

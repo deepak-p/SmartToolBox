@@ -62,21 +62,43 @@ public class ToolsController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // forward to mypage.html
+        String status;
+        if (request.getParameter("status") != null) {
+            status = request.getParameter("status");
+            DbMgr db = new DbMgr();
+            SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
+            java.util.Date start_date;
+            try {
+                start_date = format.parse("20150901");
+                java.util.Date end_date = format.parse("20151215");
+                Date startDate = new Date(start_date.getTime());
+                Date endDate = new Date(end_date.getTime());
 
-        DbMgr db = new DbMgr();
-        SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
-        java.util.Date start_date;
-        try {
-            start_date = format.parse("20150901");
-            java.util.Date end_date = format.parse("20150915");
-            Date startDate = new Date(start_date.getTime());
-            Date endDate = new Date(end_date.getTime());
+                List<ToolsReport> toolsReport = db.getToolsReport(startDate, endDate, status);
 
-            List<ToolsReport> toolsReport = db.getToolsReport(startDate, endDate);
+                request.setAttribute("toolsreport", toolsReport);
+            } catch (ParseException ex) {
+                Logger.getLogger(ToolsController.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
-          request.setAttribute("toolsreport",toolsReport);
-        } catch (ParseException ex) {
-            Logger.getLogger(ToolsController.class.getName()).log(Level.SEVERE, null, ex);
+        } else {
+            status = "available";
+            DbMgr db = new DbMgr();
+            SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
+            java.util.Date start_date;
+            try {
+                start_date = format.parse("20150901");
+                java.util.Date end_date = format.parse("20151215");
+                Date startDate = new Date(start_date.getTime());
+                Date endDate = new Date(end_date.getTime());
+
+                List<ToolsReport> toolsReport = db.getToolsReport(startDate, endDate, status);
+
+                request.setAttribute("toolsreport", toolsReport);
+            } catch (ParseException ex) {
+                Logger.getLogger(ToolsController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
         }
 
         request.getRequestDispatcher("allitems.jsp").forward(request, response);
