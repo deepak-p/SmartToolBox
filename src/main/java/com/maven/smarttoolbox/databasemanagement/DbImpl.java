@@ -37,7 +37,7 @@ public interface DbImpl {
 
     public String loginVerification(String email, String password);
     
-    public List<Users> getStudents();
+    public List<Users> getStudents(String id);
 
 
 }

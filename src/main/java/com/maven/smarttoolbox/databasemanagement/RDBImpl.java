@@ -83,8 +83,8 @@ public class RDBImpl implements DbImpl {
     }
 
     @Override
-    public List<Users> getStudents() {
-         DBcmd getStudents=new GetStudents();
+    public List<Users> getStudents(String id) {
+         DBcmd getStudents=new GetStudents(id);
         getStudents.execute();
         return (List<Users>) getStudents.getResult();
         

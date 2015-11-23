@@ -62,6 +62,8 @@
         <div id="w-text-aaam" data-type="text" class="n-widget w-text">
             Manage Users
         </div>
+        
+         
         <div id="w-area-aaan" data-type="area" class="p-164042 n-widget w-area">
             <div id="w-area-aaao" data-type="area" class="p-164042 n-widget w-area">
                 <div id="w-text-aaap" data-type="text" class="n-widget w-text">
@@ -75,19 +77,25 @@
                     </a>
                 </div>
             </div>
+            
+            
+           
+             <form id="contactForm" class="form-inline"  method="get" action="getstudentrecords">
             <div id="w-area-aaas" data-type="area" class="p-164042 n-widget w-area">
                 <div id="w-100002-text-aaat" data-type="100002.text" class="n-widget w-100002-text">
                     <div class="form-group" data-comid="comidd4e3cb9a195d74cf" data-title="View/ Edit user ( Enter user ID #)" data-required="1">
                         <label>View/ Edit user ( Enter user ID #) <span class="required">*</span></label>
-                        <input type="text" class="form-control input" value="" style="width: 100%">
+                        <input type="text" class="form-control input" name ="id" value="" style="width: 100%"><br>
+                        <input type="submit" class="w-button-right" value="Edit" style="width: 60%"><i class="w-button-right"></i>
+
                     </div>
                 </div>
             </div>
-            <div id="w-button-aaau" data-type="button" class="n-widget w-button t-button-am08 t-button-am08-black">
-                <a href="edituser.jsp" class="w-button-container w-button-fixed" id="w-button-aaau-b">
-                    <span class="w-button-text"><i class="middle"></i><b class="text">Go</b></span><i class="w-button-right"></i>
-                </a>
-            </div>
+                          
+            
+             </form>
+            
+            
             <div id="w-area-aaav" data-type="area" class="p-164042 n-widget w-area">
                 <div id="w-text-aaaw" data-type="text" class="n-widget w-text">
                     <font size="3"><b>Add new user *</b></font>

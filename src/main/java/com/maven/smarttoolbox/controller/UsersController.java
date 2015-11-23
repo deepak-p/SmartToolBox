@@ -12,7 +12,6 @@ package com.maven.smarttoolbox.controller;
 import Entities.Users;
 import com.maven.smarttoolbox.databasemanagement.DbMgr;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -58,13 +57,33 @@ public class UsersController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // forward to mypage.html
+        try{
+        String id;
+        if (request.getParameter("id") != null) {
+            id = request.getParameter("id");
+            DbMgr db = new DbMgr();
+            List<Users> students = db.getStudents(id);
+         
+
+          
+            request.setAttribute("student", students.get(0));
+            
+            
+
+            request.getRequestDispatcher("edituser.jsp").forward(request, response);
+        }
 
         DbMgr db = new DbMgr();
 
-        List<Users> users = db.getStudents();
+        List<Users> users = db.getStudents(null);
 
         request.setAttribute("students", users);
 
         request.getRequestDispatcher("alluser.jsp").forward(request, response);
+        }
+        catch(Exception e){
+            request.setAttribute("Message", "The user does not exist");
+            request.getRequestDispatcher("error.jsp").forward(request, response);
+        }
     }
 }

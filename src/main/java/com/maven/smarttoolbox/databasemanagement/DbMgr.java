@@ -59,8 +59,8 @@ public class DbMgr {
 
     }
     
-    public List<Users> getStudents() {
-        return dbimpl.getStudents();
+    public List<Users> getStudents(String id) {
+        return dbimpl.getStudents(id);
 
     }
     
