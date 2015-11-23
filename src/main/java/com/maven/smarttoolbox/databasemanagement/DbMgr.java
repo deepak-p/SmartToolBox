@@ -8,10 +8,8 @@ package com.maven.smarttoolbox.databasemanagement;
 import Entities.Tools;
 import Entities.ToolsReport;
 import Entities.Users;
-import com.maven.smarttoolbox.dbinteraction.LoginVerification;
 import java.sql.Date;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 /**
@@ -56,8 +54,8 @@ public class DbMgr {
 
     }
 
-    public List<ToolsReport> getToolsReport(Date startDate, Date endDate) {
-        return dbimpl.getToolsReport(startDate, endDate);
+    public List<ToolsReport> getToolsReport(Date startDate, Date endDate,String status) {
+        return dbimpl.getToolsReport(startDate, endDate,status);
 
     }
 

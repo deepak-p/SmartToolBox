@@ -148,7 +148,7 @@
                     <div class="w-col" style="width:14.11889596603%;">
                         <div id="w-area-aabl" data-type="area" class="p-164042 n-widget w-area">
                             <div id="w-text-aabm" data-type="text" class="n-widget w-text">
-                                <font><font class=""><font><font>Not Available</font></font></font></font>
+                                <font><font class=""><font><font><c:out value="${elements.getStatus()}" /></font></font></font></font>
                             </div>
                         </div>
                     </div>
