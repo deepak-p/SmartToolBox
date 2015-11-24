@@ -28,9 +28,14 @@ public class DbMgr {
         return dbimpl.addUser(s);
 
     }
+   
+     public boolean updateStudent(String id, String fName, String lName,String email) {
+        return dbimpl.updateStudent(id,fName,lName,email);
 
-    public boolean removeUser(int id) {
-        return true;
+    }
+
+    public boolean removeUser(String id) {
+        return dbimpl.removeUser(id);
 
     }
 

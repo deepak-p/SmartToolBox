@@ -66,6 +66,12 @@
         <div id="w-text-aaam" data-type="text" class="n-widget w-text">
             <font><font class="">Edit User</font></font>
         </div>
+        
+        
+        
+       <form id="contactForm" class="form-inline" name="login" method="post" action="updatestudent">
+            
+        
         <div id="w-area-aaan" data-type="area" class="p-164042 n-widget w-area">
             <div id="w-area-aaao" data-type="area" class="p-164042 n-widget w-area">
                 <div id="w-image-aaap" data-type="image" class="n-widget w-image">
@@ -82,7 +88,7 @@
                     <div id="w-100002-text-aaat" data-type="100002.text" class="n-widget w-100002-text">
                         <div class="form-group" data-comid="comid9a75e1ce62142002" data-title="Last name" data-required="1">
                             <label>Last name <span class="required">*</span></label>
-                            <input type="text" class="form-control input" value=" <c:out value="${student.getLName()}"  />" style="width: 100%">
+                            <input type="text" class="form-control input" name="lName" value=" <c:out value="${student.getLName()}"  />" style="width: 100%">
                         </div>
                     </div>
                 </div>
@@ -91,7 +97,7 @@
                 <div id="w-100002-text-aaav" data-type="100002.text" class="n-widget w-100002-text">
                     <div class="form-group" data-comid="comid7f0e00516cae577b" data-title="First name" data-required="1">
                         <label>First name <span class="required">*</span></label>
-                        <input type="text" class="form-control input" value=" <c:out value="${student.getFName()}"  />" style="width: 100%">
+                        <input type="text" class="form-control input" name="fName" value=" <c:out value="${student.getFName()}"  />" style="width: 100%">
                     </div>
                 </div>
             </div>
@@ -99,34 +105,40 @@
                 <div id="w-100002-text-aaax" data-type="100002.text" class="n-widget w-100002-text">
                     <div class="form-group" data-comid="comidd63edbb41d47086e" data-title="Student ID #" data-required="1">
                         <label>Student ID # <span class="required">*</span></label>
-                        <input type="text" class="form-control input" value=" <c:out value="${student.getId()}"  />" style="width: 100%">
+                        <input type="text" class="form-control input" name="id" value=" <c:out value="${student.getId()}"  />" style="width: 100%">
+                    </div>
+                </div>
+            </div>
+                     <div id="w-area-aaaw" data-type="area" class="p-164042 n-widget w-area">
+                <div id="w-100002-text-aaax" data-type="100002.text" class="n-widget w-100002-text">
+                    <div class="form-group" data-comid="comidd63edbb41d47086e"  data-title="email" data-required="1">
+                        <label>Email <span class="required">*</span></label>
+                        <input type="text" class="form-control input" name="email" value=" <c:out value="${student.getEmail()}"  />" style="width: 100%">
                     </div>
                 </div>
             </div>
 
-            <div id="w-area-aado" data-type="area" class="p-164042 n-widget w-area">
-                <div id="w-columnbox-aadp" data-type="columnbox" class="n-widget w-columnbox">
-                    <div class="w-col" style="width:53.333333333333%;">
-                        <div id="w-area-aadq" data-type="area" class="p-164042 n-widget w-area">
-                            <div id="w-button-aadr" data-type="button" class="n-widget w-button t-button-am08 t-button-am08-black">
-                                <a href="javascript:void(0);" target="_blank" class="w-button-container" id="w-button-aadr-b">
-                                    <span class="w-button-text"><i class="middle"></i><b class="text">Save</b></span><i class="w-button-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+            <div id="w-area-aaba" data-type="area" class="p-164042 n-widget w-area">
+                    <div id="w-columnbox-aabb" data-type="columnbox" class="n-widget w-columnbox">
+                        <div class="w-col" style="width:33.333333333333%;">
+                            <div id="w-area-aabc" data-type="area" class="p-164042 n-widget w-area">
+                                <div id="w-button-aabd" data-type="button" class="n-widget w-button t-button-am08 t-button-am08-black">
+                                    <input  id="submit" tabindex="25" name="action" value="update" type="submit"> 
+                                    <input  id="submit" tabindex="25" name="action" value="delete" type="submit"> 
 
-                    <div class="w-col" style="width:33.333333333333%;">
-                        <div id="w-area-aadu" data-type="area" class="p-164042 n-widget w-area">
-                            <div id="w-button-aadv" data-type="button" class="n-widget w-button t-button-am08 t-button-am08-black">
-                                <a href="javascript:void(0);" target="_blank" class="w-button-container" id="w-button-aadv-b">
-                                    <span class="w-button-text"><i class="middle"></i><b class="text">Delete</b></span><i class="w-button-right"></i>
-                                </a>
+                                </div>
                             </div>
                         </div>
+
+                       
                     </div>
                 </div>
-            </div>
+                    
+      
+       </form>
+                   
+                    
+                    
         </div>
         <!--custom footer start-->
         <script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");

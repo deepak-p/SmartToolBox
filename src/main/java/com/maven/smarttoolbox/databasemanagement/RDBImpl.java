@@ -13,6 +13,8 @@ import com.maven.smarttoolbox.dbinteraction.AddUser;
 import com.maven.smarttoolbox.dbinteraction.GetStudents;
 import com.maven.smarttoolbox.dbinteraction.GetToolsReport;
 import com.maven.smarttoolbox.dbinteraction.LoginVerification;
+import com.maven.smarttoolbox.dbinteraction.RemoveUser;
+import com.maven.smarttoolbox.dbinteraction.UpdateStudent;
 import java.sql.Date;
 import java.util.List;
 
@@ -30,8 +32,11 @@ public class RDBImpl implements DbImpl {
     }
 
     @Override
-    public boolean removeUser(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean removeUser(String id) {
+        DBcmd removeUser = new RemoveUser(id);
+        removeUser.execute();
+        return (boolean) removeUser.getResult();
+      
     }
 
     @Override
@@ -88,6 +93,13 @@ public class RDBImpl implements DbImpl {
         getStudents.execute();
         return (List<Users>) getStudents.getResult();
         
+    }
+
+    @Override
+    public boolean updateStudent(String id, String fName, String lName,String email) {
+         DBcmd updateStudent=new UpdateStudent(id,fName,lName,email);
+       updateStudent.execute();
+        return (boolean) updateStudent.getResult();
     }
 
 }

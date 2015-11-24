@@ -20,7 +20,7 @@ public interface DbImpl {
 
     public boolean addUser(Users s);
 
-    public boolean removeUser(int id);
+    public boolean removeUser(String id);
 
     public boolean addTools(Tools t);
     public List<ToolsReport> getToolsReport(Date startDate, Date endDate,String status);
@@ -34,6 +34,7 @@ public interface DbImpl {
     public void reportLostItem(int toolId);
 
     public boolean updateTools(Tools t);
+    public boolean updateStudent(String id, String fName,String lName,String email);
 
     public String loginVerification(String email, String password);
     

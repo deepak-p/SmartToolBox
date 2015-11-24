@@ -24,6 +24,7 @@ public class UsersController extends HttpServlet {
 
     javax.servlet.ServletRequest j;
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String message = "";
 
@@ -85,5 +86,27 @@ public class UsersController extends HttpServlet {
             request.setAttribute("Message", "The user does not exist");
             request.getRequestDispatcher("error.jsp").forward(request, response);
         }
+    }
+    
+    
+     @Override
+    protected void doPut(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        // forward to mypage.html
+        
+            String id = request.getParameter("id");
+            DbMgr db = new DbMgr();
+            List<Users> students = db.getStudents(id);
+         
+
+          
+            request.setAttribute("student", students.get(0));
+            
+            
+
+            request.getRequestDispatcher("edituser.jsp").forward(request, response);
+        
+
+       
     }
 }
