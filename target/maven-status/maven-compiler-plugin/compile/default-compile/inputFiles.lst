@@ -12,6 +12,7 @@
 /Users/deepak/Workspaces/SmartToolBox/src/main/java/com/maven/smarttoolbox/dbinteraction/GetStudents.java
 /Users/deepak/Workspaces/SmartToolBox/src/main/java/Entities/ToolsReport.java
 /Users/deepak/Workspaces/SmartToolBox/src/main/java/com/maven/smarttoolbox/databasemanagement/DbMgr.java
+/Users/deepak/Workspaces/SmartToolBox/src/main/java/com/maven/smarttoolbox/dbinteraction/RemoveUser.java
 /Users/deepak/Workspaces/SmartToolBox/src/main/java/Entities/Users.java
 /Users/deepak/Workspaces/SmartToolBox/src/main/java/com/maven/smarttoolbox/controller/LoginController.java
 /Users/deepak/Workspaces/SmartToolBox/src/main/java/com/maven/smarttoolbox/controller/UpdateUsersController.java
