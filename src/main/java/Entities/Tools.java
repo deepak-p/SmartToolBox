@@ -35,7 +35,7 @@ public class Tools implements Serializable {
     @Basic(optional = false)
     @NotNull
     @Column(name = "id")
-    private Long id;
+    private String id;
     @Size(max = 45)
     @Column(name = "toolName")
     private String toolName;
@@ -48,7 +48,7 @@ public class Tools implements Serializable {
     public Tools() {
     }
 
-    public Tools(Long id, String toolName, Integer drawer, String type) {
+    public Tools(String id, String toolName, Integer drawer, String type) {
         this.id = id;
         this.toolName = toolName;
         this.drawer = drawer;
@@ -69,15 +69,15 @@ public class Tools implements Serializable {
     
     
 
-    public Tools(Long id) {
+    public Tools(String id) {
         this.id = id;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

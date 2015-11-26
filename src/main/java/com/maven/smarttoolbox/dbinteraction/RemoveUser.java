@@ -48,7 +48,7 @@ public class RemoveUser extends DBcmd {
 
     public static void main(String[] args) {
         DbMgr db = new DbMgr();
-        boolean removeUser = db.removeUser("  1000928043");
+        boolean removeUser = db.removeUser("1000928045");
         System.out.println(removeUser);
 
     }

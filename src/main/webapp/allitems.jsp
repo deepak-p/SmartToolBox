@@ -106,13 +106,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="w-col" style="width:19.078014184397%;">
-                        <div id="w-area-aaba" data-type="area" class="p-164042 n-widget w-area">
-                            <div id="w-text-aabb" data-type="text" class="n-widget w-text">
-                                <font><font><font><font class=""><font><font>Previous checkouts</font></font></font></font></font></font>
-                            </div>
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
             <c:forEach items="${toolsreport}" var="elements">
@@ -152,13 +146,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="w-col" style="width:19.214437367303%;">
-                        <div id="w-area-aabn" data-type="area" class="p-164042 n-widget w-area">
-                            <div id="w-text-aabo" data-type="text" class="n-widget w-text">
-                                <font><font class=""><c:out value="${elements.getCheckouts()}" /></font></font>
-                            </div>
-                        </div>
-                    </div>
+               
 
                     <br><br><br>
 

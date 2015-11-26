@@ -10,8 +10,7 @@ import com.maven.smarttoolbox.controller.ToolsController;
 import com.maven.smarttoolbox.databasemanagement.DBcmd;
 import com.maven.smarttoolbox.databasemanagement.DbMgr;
 import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -42,7 +41,7 @@ public class GetToolsReport extends DBcmd {
     @Override
     public void queryDB() throws SQLException {
         String sqlQuery;
-        if(!this.status.equals("available")){
+        if(!this.status.equals("none")){
           sqlQuery= "select toolName,type,status,id, count(id) checkouts from tools where status= '"+this.status +"' group by id;";
 
             
@@ -80,11 +79,11 @@ public class GetToolsReport extends DBcmd {
                 report.setStatus(resultSet.getString("status"));
                 
                 if(!this.status.equals("available")){
-                    report.setTool_id(resultSet.getLong("id"));
+                    report.setTool_id(resultSet.getString("id"));
                 report.setCheckouts(0);
                 }
                 else{
-                report.setTool_id(resultSet.getLong("tool_id"));
+                report.setTool_id(resultSet.getString("tool_id"));
                 report.setCheckouts(resultSet.getInt("checkouts"));
                 }
 
@@ -99,12 +98,12 @@ public class GetToolsReport extends DBcmd {
     public static void main(String[] args) {
 
         DbMgr db = new DbMgr();
-        String status = "missing";
+        String status = "available";
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
         java.util.Date start_date;
         try {
-            start_date = format.parse("20150901");
-            java.util.Date end_date = format.parse("20150915");
+            start_date = format.parse("20140901");
+            java.util.Date end_date = format.parse("20160915");
             Date startDate = new Date(start_date.getTime());
             Date endDate = new Date(end_date.getTime());
 
