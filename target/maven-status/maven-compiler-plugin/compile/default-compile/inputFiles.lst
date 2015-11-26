@@ -3,7 +3,6 @@
 /Users/deepak/Workspaces/SmartToolBox/src/main/java/com/maven/smarttoolbox/controller/ToolsController.java
 /Users/deepak/Workspaces/SmartToolBox/src/main/java/com/maven/smarttoolbox/databasemanagement/DBcmd.java
 /Users/deepak/Workspaces/SmartToolBox/src/main/java/com/maven/smarttoolbox/dbinteraction/AddTools.java
-/Users/deepak/Workspaces/SmartToolBox/src/main/java/com/maven/smarttoolbox/controller/UpdateToolsController.java
 /Users/deepak/Workspaces/SmartToolBox/src/main/java/com/maven/smarttoolbox/databasemanagement/RDBImpl.java
 /Users/deepak/Workspaces/SmartToolBox/src/main/java/com/maven/smarttoolbox/dbinteraction/LoginVerification.java
 /Users/deepak/Workspaces/SmartToolBox/src/main/java/com/maven/smarttoolbox/dbinteraction/GetFrequentTools.java

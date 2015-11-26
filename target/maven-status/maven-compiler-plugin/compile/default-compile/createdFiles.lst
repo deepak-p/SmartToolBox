@@ -8,7 +8,6 @@ com/maven/smarttoolbox/databasemanagement/RDBImpl.class
 com/maven/smarttoolbox/databasemanagement/DbMgr.class
 com/maven/smarttoolbox/dbinteraction/GetToolsReport.class
 com/maven/smarttoolbox/controller/ToolsController.class
-com/maven/smarttoolbox/controller/UpdateToolsController.class
 com/maven/smarttoolbox/dbinteraction/UpdateTools.class
 com/maven/smarttoolbox/controller/UsersController.class
 Entities/Tools.class
