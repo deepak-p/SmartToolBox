@@ -6,7 +6,6 @@
 package com.maven.smarttoolbox.dbinteraction;
 
 import Entities.ToolsReport;
-import com.maven.smarttoolbox.controller.ToolsController;
 import com.maven.smarttoolbox.databasemanagement.DBcmd;
 import com.maven.smarttoolbox.databasemanagement.DbMgr;
 import java.sql.Date;
@@ -41,15 +40,17 @@ public class GetToolsReport extends DBcmd {
     @Override
     public void queryDB() throws SQLException {
         String sqlQuery;
-        if(!this.status.equals("none")){
-          sqlQuery= "select toolName,type,status,id, count(id) checkouts from tools where status= '"+this.status +"' group by id;";
-
+        if(!this.status.equals("")){
+          //  sqlQuery= "select toolName,type,status,tool_id, count(tool_id) checkouts from TOOLS_USES, tools  where status = '" + this.status + "' and tools.id=tool_id and  checkOut between '" + this.sd + "'  and '" + this.ed + "' group  by tool_id order by tool_id desc;";
+                        sqlQuery= "select * from  tools  where status = '" + this.status + "'  ";
+                                }
+        else {
+            sqlQuery= "select toolName,type,status,id, count(id) checkouts from tools;";
+            
             
         }
-        else{
-         sqlQuery= "select toolName,type,status,tool_id, count(tool_id) checkouts from TOOLS_USES, tools  where status = '" + this.status + "' and tools.id=tool_id and  checkOut between '" + this.sd + "'  and '" + this.ed + "' group  by tool_id order by tool_id desc;";
-
-        }
+        
+        
         System.out.println(sqlQuery);
         try {
             //System.out.println(sql);
@@ -78,15 +79,10 @@ public class GetToolsReport extends DBcmd {
                 report.setType(resultSet.getString("type"));
                 report.setStatus(resultSet.getString("status"));
                 
-                if(!this.status.equals("available")){
+              
                     report.setTool_id(resultSet.getString("id"));
                 report.setCheckouts(0);
-                }
-                else{
-                report.setTool_id(resultSet.getString("tool_id"));
-                report.setCheckouts(resultSet.getInt("checkouts"));
-                }
-
+              
                 ((ArrayList<ToolsReport>) result).add(report);
 
             }
@@ -98,7 +94,7 @@ public class GetToolsReport extends DBcmd {
     public static void main(String[] args) {
 
         DbMgr db = new DbMgr();
-        String status = "available";
+        String status = "lost";
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
         java.util.Date start_date;
         try {
@@ -115,7 +111,6 @@ public class GetToolsReport extends DBcmd {
             }
 
         } catch (ParseException ex) {
-            Logger.getLogger(ToolsController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }

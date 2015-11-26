@@ -60,7 +60,7 @@
             </div>
         </div>
         <div id="w-text-aaam" data-type="text" class="n-widget w-text">
-            <font><font class="">Add new Item</font></font>
+            <font><font class="">Edit the Item</font></font>
         </div>
 
         <form id="contactForm" class="form-inline" name="login" method="post" action="tools">
@@ -115,12 +115,29 @@
                         </div>
                     </div>
                 </div>
+                
+                 <div id="w-area-aaay" data-type="area" class="p-164042 n-widget w-area">
+                    <div id="w-100002-select-aaaz" data-type="100002.select" class="n-widget w-100002-select">
+                        <div class="form-group" data-comid="comidab4f83d0a5ac3c92" data-title="Category" data-required="1">
+                            <label>Status <span class="required">*</span></label>
+                            <select class="form-control select" name="status" >
+                                <option data-id="1" data-title="1" value="available">Available</option>
+                                <option data-id="2" data-title="2" value="missing">Missing</option>
+                                <option data-id="3" data-title="3" value="lost">Lost</option>
+                                <option data-id="4" data-title="4" value="broken">Broken</option>
+                              
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+              
                 <div id="w-area-aaba" data-type="area" class="p-164042 n-widget w-area">
                     <div id="w-columnbox-aabb" data-type="columnbox" class="n-widget w-columnbox">
                         <div class="w-col" style="width:33.333333333333%;">
                             <div id="w-area-aabc" data-type="area" class="p-164042 n-widget w-area">
                                 <div id="w-button-aabd" data-type="button" class="n-widget w-button t-button-am08 t-button-am08-black">
-                                    <input  id="submit" tabindex="5" value="Create" type="submit"> 
+                                    <input  id="submit" tabindex="5" name="create" value="Create" type="submit"> 
 
                                 </div>
                             </div>
@@ -129,7 +146,7 @@
                         <div class="w-col" style="width:33.333333333333%;">
                             <div id="w-area-aabg" data-type="area" class="p-164042 n-widget w-area">
                                 <div id="w-button-aabh" data-type="button" class="n-widget w-button t-button-am08 t-button-am08-black">
-                                    <input  id="submit" tabindex="5" value="Reset" type="reset"> 
+                                    <input  id="submit" tabindex="5" name="delete" value="Delete" type="submit"> 
 
                                 </div>
                             </div>
