@@ -55,7 +55,11 @@ public class AddTools extends DBcmd {
       
          DbMgr db = new DbMgr();
          Tools tools= new Tools();
+<<<<<<< OURS
+         tools.setId("12308");
+=======
          tools.setId("123098XYVKEO");
+>>>>>>> THEIRS
          tools.setDrawer(4);
          tools.setToolName("Screw-medium-size");
          tools.setType("Screwdriver");

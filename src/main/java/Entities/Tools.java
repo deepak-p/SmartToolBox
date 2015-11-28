@@ -65,9 +65,6 @@ public class Tools implements Serializable {
         this.type = type;
     }
 
-   
-    
-    
 
     public Tools(String id) {
         this.id = id;

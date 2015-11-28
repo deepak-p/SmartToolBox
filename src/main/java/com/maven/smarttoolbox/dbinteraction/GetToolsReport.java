@@ -79,10 +79,23 @@ public class GetToolsReport extends DBcmd {
                 report.setType(resultSet.getString("type"));
                 report.setStatus(resultSet.getString("status"));
                 
+<<<<<<< OURS
+                if(!this.status.equals("available")){
+=======
               
+>>>>>>> THEIRS
                     report.setTool_id(resultSet.getString("id"));
                 report.setCheckouts(0);
+<<<<<<< OURS
+                }
+                else{
+                report.setTool_id(resultSet.getString("tool_id"));
+                report.setCheckouts(resultSet.getInt("checkouts"));
+                }
+
+=======
               
+>>>>>>> THEIRS
                 ((ArrayList<ToolsReport>) result).add(report);
 
             }
@@ -94,7 +107,11 @@ public class GetToolsReport extends DBcmd {
     public static void main(String[] args) {
 
         DbMgr db = new DbMgr();
+<<<<<<< OURS
+        String status = "available";
+=======
         String status = "lost";
+>>>>>>> THEIRS
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
         java.util.Date start_date;
         try {
