@@ -61,7 +61,9 @@
         </div>
 
         <%
-            out.println(request.getAttribute("Message"));
+            if (request.getAttribute("Message") != null) {
+                out.println(request.getAttribute("Message"));
+            }
 
         %>
         <div id="w-text-aaam" data-type="text" class="n-widget w-text">
@@ -83,76 +85,32 @@
             </div>
         </div>
         <div id="w-area-aaar" data-type="area" class="p-164042 n-widget w-area">
-            <div id="w-area-aaas" data-type="area" class="p-164042 n-widget w-area">
-                <div id="w-100002-text-aaat" data-type="100002.text" class="n-widget w-100002-text">
-                    <div class="form-group" data-comid="comid45f4a864988ec54e" data-title="Show items that have been checked out at least" data-required="0">
-                        <label>Show items that have been checked out at least <span class="required"></span></label>
-                        <input type="text" class="form-control input" value="" style="width: 13%">
-                    </div>
-                </div>
-                <div id="w-100002-select-aaau" data-type="100002.select" class="n-widget w-100002-select">
-                    <div class="form-group" data-comid="comid948dd7b5fd1a8f65" data-title="times in the past" data-required="1">
-                        <label>times in the past <span class="required">*</span></label>
-                        <select class="form-control select" name="select_comid948dd7b5fd1a8f65">
-                            <option data-id="1" data-title="all time" value="all time"> all time</option>
-                            <option data-id="2" data-title="week" value="week"> week</option>
-                            <option data-id="3" data-title="month" value="month"> month</option>
-                            <option data-id="4" data-title="semester" value="semester"> semester</option>
-                            <option data-id="5" data-title="year" value="year"> year</option>
-                        </select>
-                    </div>
-                </div>
-                <div id="w-button-aaav" data-type="button" class="n-widget w-button t-button-am08 t-button-am08-black">
-                    <a href="./index.php?nfssp=allitems" class="w-button-container w-button-fixed" id="w-button-aaav-b">
-                        <span class="w-button-text"><i class="middle"></i><b class="text">Go</b></span><i class="w-button-right"></i>
-                    </a>
-                </div>
-            </div>
-            <div id="w-area-aaaw" data-type="area" class="p-164042 n-widget w-area">
-                <div id="w-100002-text-aaax" data-type="100002.text" class="n-widget w-100002-text">
-                    <div class="form-group" data-comid="comid1645948e4eda98b4" data-title="Show items that have been checked out at most" data-required="0">
-                        <label>Show items that have been checked out at most <span class="required"></span></label>
-                        <input type="text" class="form-control input" value="" style="width: 13%">
-                    </div>
-                </div>
-                <div id="w-100002-select-aaay" data-type="100002.select" class="n-widget w-100002-select">
-                    <div class="form-group" data-comid="comidb55aef6d5dce2d01" data-title="times in the past" data-required="1">
-                        <label>times in the past <span class="required">*</span></label>
-                        <select class="form-control select" name="select_comidb55aef6d5dce2d01">
-                            <option data-id="1" data-title="all time" value="all time"> all time</option>
-                            <option data-id="2" data-title="week" value="week"> week</option>
-                            <option data-id="3" data-title="month" value="month"> month</option>
-                            <option data-id="4" data-title="semester" value="semester"> semester</option>
-                            <option data-id="5" data-title="year" value="year"> year</option>
-                        </select>
-                    </div>
-                </div>
-                <div id="w-button-aaaz" data-type="button" class="n-widget w-button t-button-am08 t-button-am08-black">
-                    <a href="./index.php?nfssp=allitems" class="w-button-container w-button-fixed" id="w-button-aaaz-b">
-                        <span class="w-button-text"><i class="middle"></i><b class="text">Go</b></span><i class="w-button-right"></i>
-                    </a>
-                </div>
-            </div>
+
+
             <div id="w-area-aaba" data-type="area" class="p-164042 n-widget w-area">
-                <div id="w-100002-select-aabb" data-type="100002.select" class="n-widget w-100002-select">
-                    <div class="form-group" data-comid="comid5419d7964f215a69" data-title="show only" data-required="1">
-                        <label>show only <span class="required">*</span></label>
-                        <select class="form-control select" name="select_comid5419d7964f215a69">
-                            <option data-id="1" data-title="Available" value="Available"> Available</option>
-                            <option data-id="2" data-title="Missing" value="Missing"> Missing</option>
-                            <option data-id="3" data-title="Lost" value="Lost"> Lost</option>
-                            <option data-id="4" data-title="Broken" value="Broken"> Broken</option>
-                        </select>
+
+                <form id="contactForm" class="form-inline"  method="get" action="getrecords">
+                    <div id="w-100002-select-aabb" data-type="100002.select" class="n-widget w-100002-select">
+                        <div class="form-group" data-comid="comid5419d7964f215a69" data-title="show only" data-required="1">
+                            <label>show only <span class="required">*</span></label>
+                            <select class="form-control select" name="status">
+                                <option data-id="1" data-title="Available" value="available"> Available</option>
+                                <option data-id="2" data-title="Missing" value="missing"> Missing</option>
+                                <option data-id="3" data-title="Lost" value="lost"> Lost</option>
+                                <option data-id="4" data-title="Broken" value="broken"> Broken</option>
+                            </select>
+                        </div>
+                        <div class="form-group"  data-title="email" data-required="1">
+                            <br>
+
+
+                            <input type="submit" class="w-button-right" value="GET" style="width: 10%"><i class="w-button-right"></i>
+                        </div>
+
                     </div>
-                </div>
-                <div id="w-text-aabc" data-type="text" class="n-widget w-text">
-                    items
-                </div>
-                <div id="w-button-aabd" data-type="button" class="n-widget w-button t-button-am08 t-button-am08-black">
-                    <a href="./index.php?nfssp=allitems" class="w-button-container w-button-fixed" id="w-button-aabd-b">
-                        <span class="w-button-text"><i class="middle"></i><b class="text">Go</b></span><i class="w-button-right"></i>
-                    </a>
-                </div>
+
+                </form>
+               
             </div>
         </div>
         <!--custom footer start-->

@@ -11,7 +11,6 @@ package com.maven.smarttoolbox.controller;
  */
 import Entities.Tools;
 import Entities.ToolsReport;
-import Entities.Users;
 import com.maven.smarttoolbox.databasemanagement.DbMgr;
 import java.io.IOException;
 import java.sql.Date;
@@ -40,11 +39,11 @@ public class ToolsController extends HttpServlet {
         String type = request.getParameter("type");
 
         //create an object admin
-        Tools tool = new Tools(Long.parseLong(id), toolName, Integer.parseInt(location), type);
+        Tools tool = new Tools(id, toolName, Integer.parseInt(location), type);
 
         //Add admin to database
         message = id + toolName + location + type;
-       DbMgr db = new DbMgr();
+        DbMgr db = new DbMgr();
         Boolean isAdded = db.addTools(tool);
 
         if (isAdded) {
@@ -63,22 +62,43 @@ public class ToolsController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         // forward to mypage.html
+        String status;
+        if (request.getParameter("status") != null) {
+            status = request.getParameter("status");
+            DbMgr db = new DbMgr();
+            SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
+            java.util.Date start_date;
+            try {
+                start_date = format.parse("20140901");
+                java.util.Date end_date = format.parse("20171215");
+                Date startDate = new Date(start_date.getTime());
+                Date endDate = new Date(end_date.getTime());
 
-        DbMgr db = new DbMgr();
+                List<ToolsReport> toolsReport = db.getToolsReport(startDate, endDate, status);
 
-        SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
-        java.util.Date start_date;
-        try {
-            start_date = format.parse("20150901");
-            java.util.Date end_date = format.parse("20150915");
-            Date startDate = new Date(start_date.getTime());
-            Date endDate = new Date(end_date.getTime());
+                request.setAttribute("toolsreport", toolsReport);
+            } catch (ParseException ex) {
+                Logger.getLogger(ToolsController.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
-            List<ToolsReport> toolsReport = db.getToolsReport(startDate, endDate);
+        } else {
+            status = "available";
+            DbMgr db = new DbMgr();
+            SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
+            java.util.Date start_date;
+            try {
+                start_date = format.parse("20150901");
+                java.util.Date end_date = format.parse("20171215");
+                Date startDate = new Date(start_date.getTime());
+                Date endDate = new Date(end_date.getTime());
 
-          request.setAttribute("toolsreport",toolsReport);
-        } catch (ParseException ex) {
-            Logger.getLogger(ToolsController.class.getName()).log(Level.SEVERE, null, ex);
+                List<ToolsReport> toolsReport = db.getToolsReport(startDate, endDate, status);
+
+                request.setAttribute("toolsreport", toolsReport);
+            } catch (ParseException ex) {
+                Logger.getLogger(ToolsController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
         }
 
         request.getRequestDispatcher("allitems.jsp").forward(request, response);

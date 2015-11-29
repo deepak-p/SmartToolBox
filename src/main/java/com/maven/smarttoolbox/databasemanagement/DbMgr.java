@@ -10,7 +10,6 @@ import Entities.ToolsReport;
 import Entities.Users;
 import java.sql.Date;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.List;
 
 /**
@@ -21,13 +20,22 @@ public class DbMgr {
 
     DbImpl dbimpl = new RDBImpl();
 
+    public String loginVerification(String email,String password){
+        return dbimpl.loginVerification(email,password);
+        
+    }
     public boolean addUser(Users s) {
         return dbimpl.addUser(s);
 
     }
+   
+     public boolean updateStudent(String id, String fName, String lName,String email) {
+        return dbimpl.updateStudent(id,fName,lName,email);
 
-    public boolean removeUser(int id) {
-        return true;
+    }
+
+    public boolean removeUser(String id) {
+        return dbimpl.removeUser(id);
 
     }
 
@@ -51,10 +59,16 @@ public class DbMgr {
 
     }
 
-    public List<ToolsReport> getToolsReport(Date startDate, Date endDate) {
-        return dbimpl.getToolsReport(startDate, endDate);
+    public List<ToolsReport> getToolsReport(Date startDate, Date endDate,String status) {
+        return dbimpl.getToolsReport(startDate, endDate,status);
 
     }
+    
+    public List<Users> getStudents(String id) {
+        return dbimpl.getStudents(id);
+
+    }
+    
 
     public void reportLostItem(int toolId) {
 
@@ -87,7 +101,10 @@ public class DbMgr {
         
       // Adding items
         Tools t = new Tools();
-        t.setId(Long.parseLong("123789"));
+
+
+        t.setId("123889");
+
         t.setDrawer(3);
         t.setToolName("New_screwdriver");
         t.setType("Screwdriver");

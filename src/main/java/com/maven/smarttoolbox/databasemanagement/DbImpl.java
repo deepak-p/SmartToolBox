@@ -8,6 +8,7 @@ package com.maven.smarttoolbox.databasemanagement;
 import Entities.Tools;
 import Entities.ToolsReport;
 import Entities.Users;
+import com.maven.smarttoolbox.dbinteraction.LoginVerification;
 import java.sql.Date;
 import java.util.List;
 
@@ -19,10 +20,10 @@ public interface DbImpl {
 
     public boolean addUser(Users s);
 
-    public boolean removeUser(int id);
+    public boolean removeUser(String id);
 
     public boolean addTools(Tools t);
-    public List<ToolsReport> getToolsReport(Date startDate, Date endDate);
+    public List<ToolsReport> getToolsReport(Date startDate, Date endDate,String status);
 
     public boolean removeTools(int toolId);
 
@@ -33,6 +34,11 @@ public interface DbImpl {
     public void reportLostItem(int toolId);
 
     public boolean updateTools(Tools t);
+    public boolean updateStudent(String id, String fName,String lName,String email);
+
+    public String loginVerification(String email, String password);
+    
+    public List<Users> getStudents(String id);
 
 
 }
