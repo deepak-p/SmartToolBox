@@ -49,8 +49,9 @@ public class DbMgr {
 
     }
 
-    public Tools getFrequentTools(Date startDate, Date endDate) {
-        return new Tools();
+    public List<ToolsReport> getFrequentTools(String startDate, String endDate,String status) {
+        return dbimpl.getFrequentTools(startDate, endDate, status);
+       
 
     }
 
@@ -59,8 +60,8 @@ public class DbMgr {
 
     }
 
-    public List<ToolsReport> getToolsReport(Date startDate, Date endDate,String status) {
-        return dbimpl.getToolsReport(startDate, endDate,status);
+    public List<ToolsReport> getToolsReport(String status) {
+        return dbimpl.getToolsReport(status);
 
     }
     

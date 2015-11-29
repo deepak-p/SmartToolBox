@@ -66,15 +66,39 @@ public class ToolsController extends HttpServlet {
         if (request.getParameter("status") != null) {
             status = request.getParameter("status");
             DbMgr db = new DbMgr();
-            SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
-            java.util.Date start_date;
+            SimpleDateFormat format = new SimpleDateFormat("MM/dd/yyyy");
+            java.util.Date start_date = null;
+            java.util.Date end_date = null;
             try {
-                start_date = format.parse("20140901");
-                java.util.Date end_date = format.parse("20171215");
+
+                //
+                if (request.getParameter("begindate") != null ) {
+                    String beginDate = request.getQueryString();
+                    String endDate = request.getParameter("endDate");
+                    //start_date = format.parse(beginDate);
+                    //end_date = format.parse(endDate);
+
+                   // Date sDate = new Date(start_date.getTime());
+                    //Date eDate = new Date(end_date.getTime());
+
+                    //List<ToolsReport> toolsReport = db.getFrequentTools(sDate, eDate, status);
+
+                    //request.setAttribute("toolsreport", toolsReport);
+                    
+                    
+                    request.getRequestDispatcher("home.jsp").forward(request, response);
+
+                } else {
+
+                    start_date = format.parse("09/01/2014");
+                    end_date = format.parse("09/22/2020");
+                }
+
+                //
                 Date startDate = new Date(start_date.getTime());
                 Date endDate = new Date(end_date.getTime());
 
-                List<ToolsReport> toolsReport = db.getToolsReport(startDate, endDate, status);
+                List<ToolsReport> toolsReport = db.getToolsReport( status);
 
                 request.setAttribute("toolsreport", toolsReport);
             } catch (ParseException ex) {
@@ -92,7 +116,7 @@ public class ToolsController extends HttpServlet {
                 Date startDate = new Date(start_date.getTime());
                 Date endDate = new Date(end_date.getTime());
 
-                List<ToolsReport> toolsReport = db.getToolsReport(startDate, endDate, status);
+                List<ToolsReport> toolsReport = db.getToolsReport(status);
 
                 request.setAttribute("toolsreport", toolsReport);
             } catch (ParseException ex) {

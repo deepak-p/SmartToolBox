@@ -10,6 +10,7 @@ import Entities.ToolsReport;
 import Entities.Users;
 import com.maven.smarttoolbox.dbinteraction.AddTools;
 import com.maven.smarttoolbox.dbinteraction.AddUser;
+import com.maven.smarttoolbox.dbinteraction.GetFrequentTools;
 import com.maven.smarttoolbox.dbinteraction.GetStudents;
 import com.maven.smarttoolbox.dbinteraction.GetToolsReport;
 //import com.maven.smarttoolbox.dbinteraction.GetToolsReport;
@@ -55,8 +56,11 @@ public class RDBImpl implements DbImpl {
     }
 
     @Override
-    public Tools getFrequentTools(Date startDate, Date endDate) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<ToolsReport> getFrequentTools(String startDate, String endDate,String status) {
+        
+         DBcmd addTools = new GetFrequentTools(startDate,endDate,status); 
+        addTools.execute();
+        return (List<ToolsReport>) addTools.getResult();
     }
 
     @Override
@@ -75,8 +79,8 @@ public class RDBImpl implements DbImpl {
     }
 
     @Override
-    public List<ToolsReport> getToolsReport(Date startDate,Date endDate,String status) {
-        DBcmd getToolsReport=new GetToolsReport(startDate,endDate,status);
+    public List<ToolsReport> getToolsReport(String status) {
+        DBcmd getToolsReport=new GetToolsReport(status);
         getToolsReport.execute();
         return (List<ToolsReport>) getToolsReport.getResult();
     }
