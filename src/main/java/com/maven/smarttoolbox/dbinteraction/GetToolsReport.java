@@ -40,17 +40,14 @@ public class GetToolsReport extends DBcmd {
     @Override
     public void queryDB() throws SQLException {
         String sqlQuery;
-        if(!this.status.equals("")){
-          //  sqlQuery= "select toolName,type,status,tool_id, count(tool_id) checkouts from TOOLS_USES, tools  where status = '" + this.status + "' and tools.id=tool_id and  checkOut between '" + this.sd + "'  and '" + this.ed + "' group  by tool_id order by tool_id desc;";
-                        sqlQuery= "select * from  tools  where status = '" + this.status + "'  ";
-                                }
-        else {
-            sqlQuery= "select toolName,type,status,id, count(id) checkouts from tools;";
-            
-            
+        if (!this.status.equals("")) {
+            //  sqlQuery= "select toolName,type,status,tool_id, count(tool_id) checkouts from TOOLS_USES, tools  where status = '" + this.status + "' and tools.id=tool_id and  checkOut between '" + this.sd + "'  and '" + this.ed + "' group  by tool_id order by tool_id desc;";
+            sqlQuery = "select * from  tools  where status = '" + this.status + "'  ";
+        } else {
+            sqlQuery = "select toolName,type,status,id, count(id) checkouts from tools;";
+
         }
-        
-        
+
         System.out.println(sqlQuery);
         try {
             //System.out.println(sql);
@@ -78,24 +75,13 @@ public class GetToolsReport extends DBcmd {
                 report.setToolName(resultSet.getString("toolName"));
                 report.setType(resultSet.getString("type"));
                 report.setStatus(resultSet.getString("status"));
-                
-<<<<<<< OURS
-                if(!this.status.equals("available")){
-=======
-              
->>>>>>> THEIRS
-                    report.setTool_id(resultSet.getString("id"));
-                report.setCheckouts(0);
-<<<<<<< OURS
-                }
-                else{
-                report.setTool_id(resultSet.getString("tool_id"));
-                report.setCheckouts(resultSet.getInt("checkouts"));
-                }
 
-=======
-              
->>>>>>> THEIRS
+             
+
+                    report.setTool_id(resultSet.getString("id"));
+                    report.setCheckouts(0);
+
+                
                 ((ArrayList<ToolsReport>) result).add(report);
 
             }
@@ -107,11 +93,9 @@ public class GetToolsReport extends DBcmd {
     public static void main(String[] args) {
 
         DbMgr db = new DbMgr();
-<<<<<<< OURS
+
         String status = "available";
-=======
-        String status = "lost";
->>>>>>> THEIRS
+
         SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
         java.util.Date start_date;
         try {

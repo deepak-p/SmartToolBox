@@ -101,11 +101,10 @@ public class DbMgr {
         
       // Adding items
         Tools t = new Tools();
-<<<<<<< OURS
-        t.setId("12309");
-=======
+
+
         t.setId("123889");
->>>>>>> THEIRS
+
         t.setDrawer(3);
         t.setToolName("New_screwdriver");
         t.setType("Screwdriver");
