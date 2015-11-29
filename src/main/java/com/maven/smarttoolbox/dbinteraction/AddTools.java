@@ -28,7 +28,7 @@ public class AddTools extends DBcmd {
     public void queryDB() throws SQLException {
         try {
             statement = conn.prepareStatement(sqlQuery);
-            statement.setLong(1, tool.getId());
+            statement.setString(1, tool.getId());
             statement.setString(2, tool.getToolName());
             statement.setInt(3, tool.getDrawer());
             statement.setString(4, tool.getType());
@@ -55,7 +55,9 @@ public class AddTools extends DBcmd {
       
          DbMgr db = new DbMgr();
          Tools tools= new Tools();
-         tools.setId(Long.parseLong("123098"));
+
+         tools.setId("123098XYVKEO");
+
          tools.setDrawer(4);
          tools.setToolName("Screw-medium-size");
          tools.setType("Screwdriver");

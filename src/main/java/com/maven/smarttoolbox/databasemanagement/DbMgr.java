@@ -101,7 +101,10 @@ public class DbMgr {
         
       // Adding items
         Tools t = new Tools();
-        t.setId(Long.parseLong("123789"));
+
+
+        t.setId("123889");
+
         t.setDrawer(3);
         t.setToolName("New_screwdriver");
         t.setType("Screwdriver");

@@ -39,7 +39,7 @@ public class ToolsController extends HttpServlet {
         String type = request.getParameter("type");
 
         //create an object admin
-        Tools tool = new Tools(Long.parseLong(id), toolName, Integer.parseInt(location), type);
+        Tools tool = new Tools(id, toolName, Integer.parseInt(location), type);
 
         //Add admin to database
         message = id + toolName + location + type;
@@ -69,8 +69,8 @@ public class ToolsController extends HttpServlet {
             SimpleDateFormat format = new SimpleDateFormat("yyyyMMdd");
             java.util.Date start_date;
             try {
-                start_date = format.parse("20150901");
-                java.util.Date end_date = format.parse("20151215");
+                start_date = format.parse("20140901");
+                java.util.Date end_date = format.parse("20171215");
                 Date startDate = new Date(start_date.getTime());
                 Date endDate = new Date(end_date.getTime());
 
@@ -88,7 +88,7 @@ public class ToolsController extends HttpServlet {
             java.util.Date start_date;
             try {
                 start_date = format.parse("20150901");
-                java.util.Date end_date = format.parse("20151215");
+                java.util.Date end_date = format.parse("20171215");
                 Date startDate = new Date(start_date.getTime());
                 Date endDate = new Date(end_date.getTime());
 

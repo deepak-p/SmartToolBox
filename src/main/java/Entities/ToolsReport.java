@@ -14,7 +14,7 @@ public class ToolsReport {
     private String toolName;
     private String type;
     private String status;
-    private Long tool_id;
+    private String tool_id;
     private int checkouts;
 
 
@@ -22,7 +22,7 @@ public class ToolsReport {
     }
 
     
-    public ToolsReport(String toolName, String type, String status, Long tool_id, int checkouts) {
+    public ToolsReport(String toolName, String type, String status, String tool_id, int checkouts) {
         this.toolName = toolName;
         this.type = type;
         this.status = status;
@@ -54,11 +54,11 @@ public class ToolsReport {
         this.status = status;
     }
 
-    public Long getTool_id() {
+    public String getTool_id() {
         return tool_id;
     }
 
-    public void setTool_id(Long tool_id) {
+    public void setTool_id(String tool_id) {
         this.tool_id = tool_id;
     }
 
