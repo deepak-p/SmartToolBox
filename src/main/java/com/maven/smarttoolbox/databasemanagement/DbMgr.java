@@ -49,8 +49,9 @@ public class DbMgr {
 
     }
 
-    public Tools getFrequentTools(Date startDate, Date endDate) {
-        return new Tools();
+    public List<ToolsReport> getFrequentTools(String startDate, String endDate,String status) {
+        return dbimpl.getFrequentTools(startDate, endDate, status);
+       
 
     }
 
@@ -59,8 +60,8 @@ public class DbMgr {
 
     }
 
-    public List<ToolsReport> getToolsReport(Date startDate, Date endDate,String status) {
-        return dbimpl.getToolsReport(startDate, endDate,status);
+    public List<ToolsReport> getToolsReport(String status) {
+        return dbimpl.getToolsReport(status);
 
     }
     
@@ -74,10 +75,20 @@ public class DbMgr {
 
     }
 
-    public boolean updateTools(Tools t) {
-        return true;
+    public boolean updateTools(Tools t,String status) {
+        return dbimpl.updateTools(t,status);
 
     }
+    public Tools getToolsByID(String tool_id) {
+        return dbimpl.getToolsByID(tool_id);
+    }
+     public boolean removeTool(String tool_id) {
+       return dbimpl.removeTool(tool_id);
+     
+     }
+    
+
+
 
     public static void main(String[] args) throws ParseException {
 
@@ -116,4 +127,8 @@ public class DbMgr {
 
     }
 
+   
+
+    
+    
 }

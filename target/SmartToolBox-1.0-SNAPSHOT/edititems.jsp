@@ -1,3 +1,8 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="Entities.Tools"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+
 <!doctype html>
 <html>
     <head>
@@ -63,7 +68,7 @@
             <font><font class="">Edit the Item</font></font>
         </div>
 
-        <form id="contactForm" class="form-inline" name="login" method="post" action="tools">
+        <form id="contactForm" class="form-inline" name="login" method="post" action="updatetools">
             
 
                
@@ -71,7 +76,7 @@
                         <div id="w-100002-text-aaat" data-type="100002.text" class="n-widget w-100002-text">
                             <div class="form-group" data-comid="comidf6d0ebe137974811" data-title="Tag ID" data-required="1">
                                 <label>Tag ID <span class="required">*</span></label>
-                                <input type="text" name="id" class="form-control input" value="" style="width: 100%">
+                                <input type="text" name="tool_id" class="form-control input" value='<c:out value="${tools.getId()}" />' style="width: 100%">
                             </div>
                         </div>
                     </div>
@@ -80,7 +85,7 @@
                     <div id="w-100002-text-aaav" data-type="100002.text" class="n-widget w-100002-text">
                         <div class="form-group" data-comid="comid07e0da8f9b1b7793" data-title="Description" data-required="1">
                             <label>Name the Tool <span class="required">*</span></label>
-                            <input type="text" name="toolName" class="form-control input" value="" style="width: 100%">
+                            <input type="text" name="tool_name" class="form-control input" value='<c:out value="${tools.getToolName()}" />' style="width: 100%">
                         </div>
                     </div>
                 </div>
@@ -105,7 +110,7 @@
                     <div id="w-100002-select-aaaz" data-type="100002.select" class="n-widget w-100002-select">
                         <div class="form-group" data-comid="comidab4f83d0a5ac3c92" data-title="Category" data-required="1">
                             <label>Drawer Location <span class="required">*</span></label>
-                            <select class="form-control select" name="location">
+                            <select class="form-control select" name="drawer">
                                 <option data-id="1" data-title="1" value="1"> 1</option>
                                 <option data-id="2" data-title="2" value="2"> 2</option>
                                 <option data-id="3" data-title="3" value="3"> 3</option>
@@ -137,7 +142,7 @@
                         <div class="w-col" style="width:33.333333333333%;">
                             <div id="w-area-aabc" data-type="area" class="p-164042 n-widget w-area">
                                 <div id="w-button-aabd" data-type="button" class="n-widget w-button t-button-am08 t-button-am08-black">
-                                    <input  id="submit" tabindex="5" name="create" value="Create" type="submit"> 
+                                    <input  id="submit" tabindex="5" name="action" value="update" type="submit"> 
 
                                 </div>
                             </div>
@@ -146,7 +151,7 @@
                         <div class="w-col" style="width:33.333333333333%;">
                             <div id="w-area-aabg" data-type="area" class="p-164042 n-widget w-area">
                                 <div id="w-button-aabh" data-type="button" class="n-widget w-button t-button-am08 t-button-am08-black">
-                                    <input  id="submit" tabindex="5" name="delete" value="Delete" type="submit"> 
+                                    <input  id="submit" tabindex="5" name="action" value="delete" type="submit"> 
 
                                 </div>
                             </div>

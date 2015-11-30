@@ -84,6 +84,39 @@
                 </div>
             </div>
         </div>
+
+
+              <form id="contactForm" class="form-inline"  method="post" action="getfrequentitems">
+
+       <div id="w-area-aaaz" data-type="area" class="p-164042 n-widget w-area">
+                <div id="w-100002-text-aaba" data-type="100002.text" class="n-widget w-100002-text">
+                    <div class="form-group" data-comid="comid1645948e4eda98b4" data-title="Show items that have been checked out at most(times)" data-required="0">
+                        <label>Show items that have been checked out at most(times) <span class="required"></span></label>
+                    </div>
+                </div>
+                <div id="w-area-aabb" data-type="area" class="p-164042 n-widget w-area">
+                    <div id="w-100002-text-aabc" data-type="100002.text" class="n-widget w-100002-text">
+                        <div class="form-group" data-comid="comide93c3c528d67814e" data-title="Begin date" data-required="0">
+                            <label>Begin date <span class="required"></span></label>
+                            <input type="date" name="begindate" class="form-control input" value="" style="width: 13%">
+                        </div>
+                    </div>
+                </div>
+                <div id="w-area-aabd" data-type="area" class="p-164042 n-widget w-area">
+                    <div id="w-100002-text-aabe" data-type="100002.text" class="n-widget w-100002-text">
+                        <div class="form-group" data-comid="comid46da2b9b71f5b593" data-title="End date" data-required="0">
+                            <label>End date <span class="required"></span></label>
+                            <input type="date" name="enddate" class="form-control input" value="" style="width: 13%">
+                        </div>
+                    </div>
+                </div>
+                <div id="w-button-aabf" data-type="button" class="n-widget w-button t-button-am08 t-button-am08-black">
+                                                      <input  id="submit" tabindex="5" value="Create" type="submit"> 
+
+                </div>
+            </div>
+        </form>
+        
         <div id="w-area-aaar" data-type="area" class="p-164042 n-widget w-area">
 
 
@@ -110,9 +143,12 @@
                     </div>
 
                 </form>
-               
+
             </div>
+
+
         </div>
+
         <!--custom footer start-->
         <script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
             document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fce299e0fd4094e4d5efce40bab839811' type='text/javascript'%3E%3C/script%3E"));</script>

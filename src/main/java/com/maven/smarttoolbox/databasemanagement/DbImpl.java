@@ -23,22 +23,28 @@ public interface DbImpl {
     public boolean removeUser(String id);
 
     public boolean addTools(Tools t);
-    public List<ToolsReport> getToolsReport(Date startDate, Date endDate,String status);
+    public List<ToolsReport> getToolsReport(String status);
 
     public boolean removeTools(int toolId);
 
-    public Tools getFrequentTools(Date startDate, Date endDate);
+    public List<ToolsReport> getFrequentTools(String startDate, String endDate,String status);
 
     public Tools getLeastFrequentTools(Date startDate, Date endDate);
 
     public void reportLostItem(int toolId);
 
-    public boolean updateTools(Tools t);
+
     public boolean updateStudent(String id, String fName,String lName,String email);
 
     public String loginVerification(String email, String password);
     
     public List<Users> getStudents(String id);
+
+    public Tools getToolsByID(String tool_id);
+
+    public boolean updateTools(Tools t, String status);
+
+    public boolean removeTool(String tool_id);
 
 
 }

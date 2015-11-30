@@ -25,14 +25,12 @@ import java.util.logging.Logger;
 public class GetToolsReport extends DBcmd {
 
     // private List<ToolsReport> toolsReport;
-    private Date sd;
-    private Date ed;
+    
     private String status;
 
-    public GetToolsReport(Date sd, Date ed, String status) {
+    public GetToolsReport(String status) {
         super();
-        this.sd = sd;
-        this.ed = ed;
+       
         this.status = status;
 
     }
@@ -104,7 +102,7 @@ public class GetToolsReport extends DBcmd {
             Date startDate = new Date(start_date.getTime());
             Date endDate = new Date(end_date.getTime());
 
-            List<ToolsReport> toolsReport = db.getToolsReport(startDate, endDate, status);
+            List<ToolsReport> toolsReport = db.getToolsReport(status);
 
             for (ToolsReport t : toolsReport) {
                 System.out.println(t);
