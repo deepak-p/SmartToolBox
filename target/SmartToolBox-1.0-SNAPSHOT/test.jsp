@@ -50,7 +50,7 @@
             <div class="w-col" style="width:14.028056112224%;">
                 <div id="w-area-aaai" data-type="area" class="p-164042 n-widget w-area">
                     <div id="w-button-aaaj" data-type="button" class="n-widget w-button t-button-am08 t-button-am08-black">
-                        <a href="./index.php?nfssp=home" class="w-button-container w-button-fixed" id="w-button-aaaj-b">
+                        <a href="./index.php?nfssp=home"  class="w-button-container w-button-fixed" id="w-button-aaaj-b">
                             <span class="w-button-text"><i class="middle"></i><b class="text">Back</b></span><i class="w-button-right"></i>
                         </a>
                     </div>
@@ -66,6 +66,15 @@
                 </div>
             </div>
         </div>
+        
+        
+        
+        <%
+           
+                out.println(request.getAttribute("Message"));
+            
+
+        %>
         <div id="w-text-aaam" data-type="text" class="n-widget w-text">
             Inventory Report
         </div>

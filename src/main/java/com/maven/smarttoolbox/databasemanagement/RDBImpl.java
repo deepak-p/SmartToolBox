@@ -12,11 +12,14 @@ import com.maven.smarttoolbox.dbinteraction.AddTools;
 import com.maven.smarttoolbox.dbinteraction.AddUser;
 import com.maven.smarttoolbox.dbinteraction.GetFrequentTools;
 import com.maven.smarttoolbox.dbinteraction.GetStudents;
+import com.maven.smarttoolbox.dbinteraction.GetToolsByID;
 import com.maven.smarttoolbox.dbinteraction.GetToolsReport;
 //import com.maven.smarttoolbox.dbinteraction.GetToolsReport;
 import com.maven.smarttoolbox.dbinteraction.LoginVerification;
+import com.maven.smarttoolbox.dbinteraction.RemoveTool;
 import com.maven.smarttoolbox.dbinteraction.RemoveUser;
 import com.maven.smarttoolbox.dbinteraction.UpdateStudent;
+import com.maven.smarttoolbox.dbinteraction.UpdateTools;
 import java.sql.Date;
 import java.util.List;
 
@@ -38,13 +41,13 @@ public class RDBImpl implements DbImpl {
         DBcmd removeUser = new RemoveUser(id);
         removeUser.execute();
         return (boolean) removeUser.getResult();
-      
+
     }
 
     @Override
     public boolean addTools(Tools t) {
-       
-        DBcmd addTools = new AddTools(t); 
+
+        DBcmd addTools = new AddTools(t);
         addTools.execute();
         return (Boolean) addTools.getResult();
 
@@ -56,9 +59,9 @@ public class RDBImpl implements DbImpl {
     }
 
     @Override
-    public List<ToolsReport> getFrequentTools(String startDate, String endDate,String status) {
-        
-         DBcmd addTools = new GetFrequentTools(startDate,endDate,status); 
+    public List<ToolsReport> getFrequentTools(String startDate, String endDate, String status) {
+
+        DBcmd addTools = new GetFrequentTools(startDate, endDate, status);
         addTools.execute();
         return (List<ToolsReport>) addTools.getResult();
     }
@@ -74,37 +77,53 @@ public class RDBImpl implements DbImpl {
     }
 
     @Override
-    public boolean updateTools(Tools t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
     public List<ToolsReport> getToolsReport(String status) {
-        DBcmd getToolsReport=new GetToolsReport(status);
+        DBcmd getToolsReport = new GetToolsReport(status);
         getToolsReport.execute();
         return (List<ToolsReport>) getToolsReport.getResult();
     }
 
     @Override
-    public String loginVerification(String email,String password) {
-       DBcmd loginVerify= new LoginVerification(email,password);
-       loginVerify.execute();
-       return (String) loginVerify.getResult();
+    public String loginVerification(String email, String password) {
+        DBcmd loginVerify = new LoginVerification(email, password);
+        loginVerify.execute();
+        return (String) loginVerify.getResult();
     }
 
     @Override
     public List<Users> getStudents(String id) {
-         DBcmd getStudents=new GetStudents(id);
+        DBcmd getStudents = new GetStudents(id);
         getStudents.execute();
         return (List<Users>) getStudents.getResult();
-        
+
     }
 
     @Override
-    public boolean updateStudent(String id, String fName, String lName,String email) {
-         DBcmd updateStudent=new UpdateStudent(id,fName,lName,email);
-       updateStudent.execute();
+    public boolean updateStudent(String id, String fName, String lName, String email) {
+        DBcmd updateStudent = new UpdateStudent(id, fName, lName, email);
+        updateStudent.execute();
         return (boolean) updateStudent.getResult();
+    }
+
+    @Override
+    public Tools getToolsByID(String tool_id) {
+        DBcmd getToolsById = new GetToolsByID(tool_id);
+        getToolsById.execute();
+        return (Tools) getToolsById.getResult();
+    }
+
+    @Override
+    public boolean updateTools(Tools t, String status) {
+        DBcmd updateTools = new UpdateTools(t, status);
+        updateTools.execute();
+        return (boolean) updateTools.getResult();
+    }
+
+    @Override
+    public boolean removeTool(String tool_id) {
+        DBcmd removeTool= new RemoveTool(tool_id);
+        removeTool.execute();
+        return (boolean) removeTool.getResult();
     }
 
 }

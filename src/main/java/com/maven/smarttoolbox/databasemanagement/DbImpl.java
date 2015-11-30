@@ -33,12 +33,18 @@ public interface DbImpl {
 
     public void reportLostItem(int toolId);
 
-    public boolean updateTools(Tools t);
+
     public boolean updateStudent(String id, String fName,String lName,String email);
 
     public String loginVerification(String email, String password);
     
     public List<Users> getStudents(String id);
+
+    public Tools getToolsByID(String tool_id);
+
+    public boolean updateTools(Tools t, String status);
+
+    public boolean removeTool(String tool_id);
 
 
 }

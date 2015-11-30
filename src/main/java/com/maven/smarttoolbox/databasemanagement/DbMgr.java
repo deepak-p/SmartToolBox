@@ -75,10 +75,20 @@ public class DbMgr {
 
     }
 
-    public boolean updateTools(Tools t) {
-        return true;
+    public boolean updateTools(Tools t,String status) {
+        return dbimpl.updateTools(t,status);
 
     }
+    public Tools getToolsByID(String tool_id) {
+        return dbimpl.getToolsByID(tool_id);
+    }
+     public boolean removeTool(String tool_id) {
+       return dbimpl.removeTool(tool_id);
+     
+     }
+    
+
+
 
     public static void main(String[] args) throws ParseException {
 
@@ -117,4 +127,8 @@ public class DbMgr {
 
     }
 
+   
+
+    
+    
 }
